@@ -1,0 +1,19 @@
+{
+  "name": "incrediblewedding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamilaSieczkowska/incrediblewedding.git"
+  },
+  "author": "Kamila Sieczkowska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KamilaSieczkowska/incrediblewedding/issues"
+  },
+  "homepage": "https://github.com/KamilaSieczkowska/incrediblewedding#readme"
+}
