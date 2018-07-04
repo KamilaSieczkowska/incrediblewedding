@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: #424242;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+$colorPrimary: #FCE1F2;
+$colorSecondary: #83B796;
+$atMenuChange: 768px;
+
+section {
+    padding: 80px 0;
+
+    .section__title {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 300;
+        position: relative;
+    }
+
+    hr {
+        border-top-color: $colorSecondary;
+    }
+
+    .section__description {
+        padding: 20px 0;
+    }
+
+}
+
+
+//mobile menu
+
+.mobile__menu__icon {
+    display: block;
+    height: 5px;
+    width: 35px;
+    position: relative;
+    margin-right: 20px;
+    margin-top: 45px;
+    background-color: $colorSecondary;
+  
+    
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    &:before {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: 10px;
+        height: 5px;
+        width: 100%;
+        background-color: $colorSecondary;
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        right: 0;
+        top: -10px;
+        height: 5px;
+        width: 100%;
+        background-color: $colorSecondary;
+    } 
+}
+
+.mobile__menu__icon.is-active {
+    transform: rotate(-45deg);
+    
+
+    &:before {
+        display: none;
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        transform: rotate(90deg);
+    }
+}
+
+//navbar
+
+.nav__box {
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+
+    .main__nav {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 10px 0;
+        position: relative;
+
+        @media screen and (min-width:1200px){
+            padding: 15px 0;
+        }
+
+        .logo {
+            margin-left: 10px;
+
+            @media screen and (min-width:1200px){
+                margin: 0;
+            }
+
+            img {
+                height: 85px;
+
+                @media screen and (min-width:768px){
+                    height: 100px;
+                }
+
+                @media screen and (min-width:1200px){
+                    height: 110px;
+                }
+            }
+        }
+
+        .menu__box {
+            display: none;
+            left: -500px;
+
+            @media screen and (min-width: $atMenuChange){
+                display: inline-block;
+            }
+
+            .nav__list {
+                display: inline-block;
+                list-style: none;
+                margin: 0;
+                position: absolute;
+                top: 40%;
+                right: 0;
+                
+
+                li {
+                    font-size: 20px;
+                    font-weight: 300;
+                    text-align: center;
+                    display: inline-block;
+                    padding-right: 30px;
+
+                    
+                    a{
+                        display: inline-block;
+                        text-decoration: none;
+                        padding-bottom: 5px;
+                        color: inherit;
+                        &:hover,
+                        &.active__link {
+
+                            @media screen and (min-width: $atMenuChange){
+                                border-bottom: 2px solid #ffc0cb;
+                                animation: animateBorder 1s ease;
+                            }
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .menu__box.active-menu {
+            display: block;
+            position: relative;
+            z-index: 100;
+
+            .nav__list {
+                background-color: $colorSecondary;
+                width: 100%;
+                position: absolute;
+                top:25px;
+                left: 0;
+                
+                li {
+                    display: block;
+                    text-align: left;
+
+                    a {
+                        color: $colorPrimary;
+
+                        &:hover {
+                            border: none;
+                            color: #566579;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes animateBorder{
+    0%{ border-bottom-color: #ECECEE }
+    100%{ border-bottom-color: #ffc0cb; }
+}
+
+
+
+
+// header 
+
+.header {
+    margin-top: 140px;
+    position: relative;
+}
+
+.parallax-window {
+    height: 700px;
+    background: transparent;
+}
+
+.header__box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+
+    @media screen and (min-width: 768px) {
+        width: 800px;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-50%);
+        padding: 40px;
+    }
+
+    .header__title {
+        margin: 0;
+        padding: 0;
+        font-size: 4.5em;
+        font-family: 'Dancing Script', cursive;
+        padding-bottom: 20px;
+    }
+
+    .header__cnt {
+        font-size: 18px;
+    }
+}
+
+//offer 
+
+.offers__info {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+
+    .offer__box {
+        width: 33.333%;
+        margin-bottom: 50px;
+
+        .image__box,
+        .description {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .description {
+            padding-top: 10px;
+            text-align: justify;
+        }
+    }
+}
+
+//media
+.media {
+    height: 600px;
+
+    video {
+        width: 100%;
+    }
+}
+
+    
+//quote
+.quote {
+    background: $colorPrimary;
+    padding: 80px 80px;
+    font-size: 44px;
+    color: #424242;
+
+    p {
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .author {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        text-align: right;
+        font-size: 20px;
+        color: #c95f71;
+    }
+
+
+}
+
+
+
+
+//contact
+
+.contact {
+    background: #e4e4e4;
+}

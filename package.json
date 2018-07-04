@@ -1,19 +1,17 @@
 {
-  "name": "incrediblewedding",
+  "name": "incredible-wedding",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KamilaSieczkowska/incrediblewedding.git"
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "compass": "^0.1.1"
   },
-  "author": "Kamila Sieczkowska",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KamilaSieczkowska/incrediblewedding/issues"
-  },
-  "homepage": "https://github.com/KamilaSieczkowska/incrediblewedding#readme"
+  "dependencies": {
+    "jquery-parallax.js": "^1.5.0"
+  }
 }
