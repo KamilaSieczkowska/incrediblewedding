@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/js/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="assets/js/slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <title>Incredible Wedding</title>
@@ -22,9 +24,9 @@
 
             <div class="menu__box" id="menu">
                 <ul class="nav__list">
-                    <li><a href="#offer">oferta</a></li>
-                    <li><a href="#gallery">galeria</a></li>
-                    <li><a href="#contact">kontakt</a></li>
+                    <li><a href="#offer" onclick="$('#offer').animatescroll({padding: 140});">oferta</a></li>
+                    <li><a href="#gallery" onclick="$('#gallery').animatescroll({padding: 140});">galeria</a></li>
+                    <li><a href="#contact" onclick="$('#contact').animatescroll({padding: 140});">kontakt</a></li>
                 </ul>
             </div>
         </nav>
@@ -144,8 +146,60 @@
 
 
     <section id="gallery" class="gallery">
-        <div class="gallery__box" id="gallery-box"></div> 
-        <div id="lightbox"></div> 
+        <h2 class="section__title">Galeria</h2>
+        <div class="container">
+            <div class="row gallery__row">
+                <div class="col-md-6">
+                    <p class="section__description">
+                        Candy sweet gummies I love. Jelly beans chocolate cake powder. Gummies danish macaroon dragée I love I love. Sugar plum chocolate pie chocolate cake sweet I love. Cake halvah topping I love danish gummi bears. Cotton candy I love I love gummies tiramisu pudding chocolate bar.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="mobile__slider visible-xs visible-sm">
+                        <div class="slider" id="mobile-slider">
+                            <img src="assets/images/bouquet.jpg"/>
+                            <img src="assets/images/bouquet.jpg"/>
+                            <img src="assets/images/bouquet.jpg"/>
+                            <img src="assets/images/bouquet.jpg"/> 
+                            <img src="assets/images/bouquet.jpg"/> 
+                        </div>
+                    </div>
+
+                    <div class="img__box visible-md visible-lg">                        
+                        <img src="assets/images/gallery_opener.jpg" alt="">
+                        <div id="gallery-btn" class="zoom__icon"><img src="assets/images/icons/search-plus.svg" alt=""></div>
+                        
+                        
+                        <div class="lightbox" id="lightbox">
+                            <div class="lightbox__container">
+                                <button class="lightbox__close">
+                                    <img src="assets/images/icons/times.svg">
+                                </button>
+
+                                <div class="lightbox__slider">
+                                    <div class="slider-for">
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                    </div>
+
+                                    <div class="slider-nav">
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                        <img src="assets/images/bouquet.jpg"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
     </section>
 
 
@@ -178,6 +232,8 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/animatescroll.js-master/animatescroll.js"></script>
+    <script src="assets/js/slick-1.8.1/slick/slick.min.js"></script>
     <script src="assets/js/parallax.js-1.5.0/parallax.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
