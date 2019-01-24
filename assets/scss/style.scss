@@ -45,55 +45,55 @@ section {
 
 //mobile menu
 
-.mobile__menu {
-    display: inline-block;
+.button__container {
     position: absolute;
-    top: 40%;
-    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
 
-    @media (min-width: 768px) {
+    @media screen and (min-width: 768px) {
         display: none;
     }
-
-    .mobile__menu__icon {
-        display: inline-block;
-        height: 5px;
-        width: 35px;
-        position: relative;
-        background-color: $colorSecondary;
-
-        &:before {
-            position: absolute;
-            content: '';
-            right: 0;
-            top: 10px;
-            height: 5px;
-            width: 100%;
-            background-color: $colorSecondary;
+    
+    
+    &.active {
+        .top {
+        transform: translateY(11px) translateX(0) rotate(45deg);
+        background: $colorSecondary;
         }
-        &:after {
-            position: absolute;
-            content: '';
-            right: 0;
-            top: -10px;
-            height: 5px;
-            width: 100%;
-            background-color: $colorSecondary;
-        } 
-    }
-
-    .mobile__menu__icon.is-active {
-        transform: rotate(-45deg);
+        .middle {
+        opacity: 0;
+        background: $colorSecondary;
+        }
         
-
-        &:before {
-            display: none;
+        .bottom {
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        background: $colorSecondary;
         }
-        &:after {
-            position: absolute;
-            content: '';
-            top: 0;
-            transform: rotate(90deg);
+    }
+    
+    span {
+    background: $colorSecondary;
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition:  all .35s ease;
+    cursor: pointer;
+        
+        &:nth-of-type(2) {
+        top: 11px;
+        }
+        
+        &:nth-of-type(3) {
+        top: 22px;
         }
     }
 }
@@ -107,6 +107,7 @@ section {
     top: 0;
     z-index: 999;
     border-bottom: 1px solid $colorPrimary;
+    
 
     .main__nav {
         max-width: 1170px;
@@ -139,40 +140,68 @@ section {
         }
 
         .menu__box {
-            display: none;
+            display: block;  
+            background-color: $colorSecondary;   
+            position: absolute;
+            width: 100%;
+            top: 100%; 
+            left: 100%; 
+            transition: all .7s ease;
+            
+            &.open {
+                left: 0; 
+            }
 
             @media screen and (min-width: 768px){
                 display: inline-block;
+                background-color: #FFF;
             }
 
             .nav__list {
-                display: inline-block;
+                display: block;
                 list-style: none;
-                margin: 0;
-                position: absolute;
-                top: 40%;
-                right: 0;
+                padding: 10px 0;
+                
+
+                @media screen and (min-width: 768px){
+                    display: inline-block;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    top: 40%;
+                    right: 0;
+                }
                 
 
                 li {
                     font-size: 20px;
                     font-weight: 300;
                     text-align: center;
-                    display: inline-block;
-                    padding-right: 30px;
+                    display: block;
+                    padding: 10px;
+
+                    @media screen and (min-width: 768px){
+                        display: inline-block;
+                        padding: 0;
+                        padding-right: 30px;
+                    }
 
                     
                     a{
                         display: inline-block;
                         text-decoration: none;
                         padding-bottom: 5px;
-                        color: inherit;
+                        color: #FFF;
+                        cursor: pointer;
+
                         &:hover,
                         &.active__link {
 
                             @media screen and (min-width: 768px){
                                 border-bottom: 2px solid #ffc0cb;
                                 animation: animateBorder 1s ease;
+                                color: #000;
                             }
                             
                         }
